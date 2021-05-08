@@ -15,3 +15,6 @@ A Spring Boot + VueJs demo application for viewing content from Discogs API
 * Spring Boot JPA
 * Spring Boot OAuth
 * Thymeleaf
+
+## API
+(Discogs API)[https://www.discogs.com/developers]
