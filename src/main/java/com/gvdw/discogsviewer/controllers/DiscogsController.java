@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/discogs")
 public class DiscogsController {
-    @GetMapping("/discogs")
+    @GetMapping("/welcome")
     public String index(){
         return "Welcome To Discogs Viewer";
     }
