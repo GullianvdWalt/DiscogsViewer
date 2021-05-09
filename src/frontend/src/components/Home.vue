@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 <!--    <img alt="Vue logo" src="./assets/logo.png">-->
-    <h1>{{ msg }}</h1>
+<!--    <h1>{{ msg }}</h1>-->
   </div>
 </template>
 
@@ -14,11 +14,11 @@ export default {
     }
   },
   mounted() {
-    fetch("/api/discogs/welcome")
-        .then((response) => response.text())
-        .then((data) => {
-          this.msg = data;
-        });
+    // fetch("/api/discogs/login")
+    //     .then((response) => response.text())
+    //     .then((data) => {
+    //       this.msg = data;
+    //     });
   }
 }
 </script>

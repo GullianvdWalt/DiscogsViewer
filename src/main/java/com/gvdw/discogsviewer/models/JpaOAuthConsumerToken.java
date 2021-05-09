@@ -16,10 +16,7 @@ import org.springframework.security.oauth.consumer.OAuthConsumerToken;
 @Table(name = "jpa_oauth_consumer_token")
 public class JpaOAuthConsumerToken {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "token_id")
-    private Integer id;
-    @Column(name = "session_id")
+    @Column(name = "http_session_id")
     private String httpSessionId;
     @Column(name = "username")
     private String username;
@@ -45,10 +42,9 @@ public class JpaOAuthConsumerToken {
      * Turn a plain OAuthConsumerToken into a JpaOAuthConsumerToken
      *
      * @param httpSessionId
-     * @param username
      * @param oauthToken
      */
-    public JpaOAuthConsumerToken(String httpSessionId, String username,OAuthConsumerToken oauthToken) {
+    public JpaOAuthConsumerToken(String httpSessionId,OAuthConsumerToken oauthToken) {
         this.httpSessionId = httpSessionId;
         this.oauthResourceId = oauthToken.getResourceId();
         this.oauthToken = oauthToken.getValue();
@@ -66,15 +62,6 @@ public class JpaOAuthConsumerToken {
         returnToken.setAdditionalParameters(getAdditionalParameters());
         return returnToken;
     }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getHttpSessionId() {
         return httpSessionId;
     }
@@ -138,7 +125,6 @@ public class JpaOAuthConsumerToken {
     @Override
     public String toString() {
         return "JpaOAuthConsumerToken{" +
-                "id=" + id +
                 ", httpSessionId='" + httpSessionId + '\'' +
                 ", username='" + username + '\'' +
                 ", oauthResourceId='" + oauthResourceId + '\'' +
